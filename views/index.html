@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Kerbal Space Program Crowd Control</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="index.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="clientside.js"></script>
+    </head>
+    <body>
+        <div class="center">
+            <div class="center-child">
+                <h2 style="font-size: 20px; color: #777777; text-align: left !important;">Kerbal Space Program: Crowd Control</h2>
+                <h2 id="power" style="text-align: left !important">Power: 0</h2>
+
+                <!-- buttons -->
+                <div id="buttonContainer">
+                    <button class="effectButton"
+                    onclick="socket.emit('effect',{effect:'reverseGravity'})">Invert Gravity (5000)</button>
+                    <button class="effectButton"
+                    onclick="socket.emit('effect',{effect:'stage'})">Stage (3500)</button>
+                    <button class="effectButton"
+                    onclick="socket.emit('effect',{effect:'randomExplosion'})">Random Part Explodes (3000)</button>
+                    <button class="effectButton"
+                    onclick="socket.emit('effect',{effect:'triggerLast'})">Trigger Last Stage In Staging Sequence (25000)</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
